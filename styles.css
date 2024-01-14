@@ -1,0 +1,45 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: #e84949;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    position: relative;
+    z-index: 1;
+}
+
+.btn::before{ 
+    /* before pseudo selector ka use karke hum actual content se pahale ya baad me kuch v content daal sakte hai */
+    /* content:"naina"; */
+    content:"";
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 1.02s;
+    z-index: -1;
+
+}
+
+.btn:hover::before{
+  transform: scaleX(1);
+}
